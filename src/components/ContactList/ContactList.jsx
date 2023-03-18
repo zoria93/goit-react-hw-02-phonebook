@@ -5,10 +5,17 @@ import { ContactItemList } from 'components/ContactItemList/ContactItemList';
 export const ContactList = ({ onFilterContacs, onDeleteContact }) => {
   return (
     <List>
-      <ContactItemList
-        onDeleteContact={onDeleteContact}
-        onFilterContacs={onFilterContacs}
-      />
+      {onFilterContacs.map(({ name, id, number }) => {
+        return (
+          <ContactItemList
+            key={id}
+            onDeleteContact={onDeleteContact}
+            name={name}
+            id={id}
+            number={number}
+          />
+        );
+      })}
     </List>
   );
 };

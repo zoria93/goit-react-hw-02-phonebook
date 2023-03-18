@@ -29,7 +29,6 @@ export class App extends Component {
           .toLowerCase()
     );
     if (duplicateName) {
-      console.log(duplicateName);
       return alert(`${name} is already in contacts`);
     }
     const newContact = {
